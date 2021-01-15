@@ -24,9 +24,7 @@ class SubscriptionCardController extends Controller
     {
         $request->user()->updateCard($request->token);
 
-        // send email
-        Mail::to($request->user())->send(new CardUpdated());
-
+       
         return redirect()->route('account.index')
             ->withSuccess('Your card has been updated.');
     }

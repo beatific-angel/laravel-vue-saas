@@ -29,9 +29,7 @@ class SubscriptionCancelController extends Controller
     {
         $request->user()->subscription('main')->cancel();
 
-        // send email
-        Mail::to($request->user())->send(new SubscriptionCancelled());
-
+        
         return redirect()->route('account.index')
             ->withSuccess('Your subscription has been cancelled.');
     }
