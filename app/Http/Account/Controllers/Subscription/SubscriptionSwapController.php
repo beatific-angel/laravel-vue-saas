@@ -37,21 +37,7 @@ class SubscriptionSwapController extends Controller
 
         $plan = Plan::where('gateway_id', $request->plan)->first();
 
-        if ($this->downgradesFromTeamPlan($user, $plan)) {
-            //todo: uncomment lines below and create event to email each user on the team
-
-            // $user->team->users()->each(function() {
-                // fire event to mail users here
-                // remember to queue them
-            // });
-
-            $user->team->users()->detach();
-        }
-
-        $user->subscription('main')->swap($plan->gateway_id);
-
-        // send mail to user
-        Mail::to($user)->send(new SubscriptionSwapped());
+       
 
         return back()->withSuccess('Your subscription has been changed.');
     }
