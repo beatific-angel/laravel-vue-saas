@@ -26,17 +26,6 @@ class SubscriptionTeamMemberController extends Controller
         }
 
         // team
-        $team = $request->user()->team;
-
-        // new member
-        $member = User::where('email', $request->email)->first();
-
-        $team->users()->syncWithoutDetaching([
-            $member->id
-        ]);
-
-        // send email to member
-        Mail::to($member)->send(new TeamMemberAdded($member, $team));
 
         return back()->withSuccess('Team member added.');
     }
@@ -54,12 +43,6 @@ class SubscriptionTeamMemberController extends Controller
         $team = $request->user()->team;
 
         // detach user
-        $team->users()->detach($user->id);
-
-        // send mail to removed user
-        Mail::to($user)->send(new TeamMemberDeleted($user, $team));
-
-        return back()->withSuccess('Member has been removed.');
     }
 
     public function getAllTeamMember(Request $request, User $user){
