@@ -29,6 +29,14 @@ class PasswordController extends Controller
     public function store(PasswordStoreRequest $request)
     {
         // update user password
-       
+        $request->user()->update(['password' => bcrypt($request->password)]);
+
+        // send email
+        Mail::to($request->user())->send(new PasswordUpdated());
+
+        // redirect with success
+        return redirect()
+            ->route('account.index')
+            ->withSuccess('Password updated successfully.');
     }
 }
