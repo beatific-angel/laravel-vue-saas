@@ -38,14 +38,7 @@ class ProfileController extends Controller
         $user = User::findOrFail(auth()->user()->id);
 
         // Check if a profile image has been uploaded
-        if ($request->has('profile_image')) {
-            $image = $request->file('profile_image');
-            $name = str::slug($request->input('name')).'_'.time();
-            $folder = '/uploads/images/';
-            $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
-            $this->uploadOne($image, $folder, 'public', $name);
-            $user->profile_image = $filePath;
-        }
+        
         $user->save();
         return back()->withSuccess('Profile updated successfully.');
     }
