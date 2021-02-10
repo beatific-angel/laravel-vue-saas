@@ -30,20 +30,7 @@ class TwoFactorController extends Controller
      */
     public function store(TwoFactorStoreRequest $request, TwoFactor $twoFactor)
     {
-        $user = $request->user();
-
-        $user->twoFactor()->create([
-            'phone' => $request->phone_number,
-            'dial_code' => $request->dial_code,
-        ]);
-
-        if ($response = $twoFactor->register($user)) {
-            $user->twoFactor()->update([
-                'identifier' => $response->user->id
-            ]);
-        }
-
-        return back();
+        
     }
 
     /**
@@ -70,14 +57,7 @@ class TwoFactorController extends Controller
      */
     public function destroy(Request $request, TwoFactor $twoFactor)
     {
-        $user = $request->user();
-
-        if ($twoFactor->delete($user)) {
-            $user->twoFactor()->delete();
-
-            return back()->withSuccess('Two factor authentication has been disabled.');
-        }
-
+        
         return back();
     }
 }
