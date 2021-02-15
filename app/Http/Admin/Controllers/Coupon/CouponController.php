@@ -54,26 +54,7 @@ class CouponController extends Controller
     public function store(Request $request)
     {
         // $this->authorize('create', Coupon::class);
-
-        $this->validate($request, [
-            'name' => 'required',
-            'percent_off' => 'required',
-            'gateway_id' => 'required',
-            'duration' => 'required',
-        ]);
-
-        // Test if duration_in_months is not empty
-        $duration_in_months = !empty($request->input('duration_in_months')) ? (int) $request->input('duration_in_months') : NULL;
-        $percent_off = (float) $request->input('percent_off');
-        // dd($percent_off);
         
-        \Stripe\Coupon::create([
-            "name" => $request->input('name'),
-            "percent_off" => $percent_off,
-            "duration" => $request->input('duration'),
-            "duration_in_months" => $duration_in_months,
-            "id" => $request->input('gateway_id')
-        ]);
 
         $coupon = new Coupon([
             "name" => $request->input('name'),
