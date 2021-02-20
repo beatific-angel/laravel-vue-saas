@@ -111,27 +111,7 @@ class CouponController extends Controller
         // Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
 
        
-        \Stripe\Coupon::create([
-            "amount" => $price,
-            "interval" => $request->input('interval'),
-            "product" => [
-                "name" => $request->input('name'),
-            ],
-            "currency" => "usd",
-            "id" => $gateway_id,
-            "trial_period_days" => $request->input('trial'),
-        ]);
-
-        $plan->name = $request->input('name');
-        $plan->gateway_id = $gateway_id;
-        $plan->price = $request->input('price');
-        $plan->interval = $request->input('interval');
-        $plan->teams_enabled = $team_enable;
-        $plan->teams_limit = $teams_limit;
-        $plan->active =1;
-        $plan->slug = $slug;
-        $plan->trial_period_days = $request->input('trial');
-        $plan->save();
+    
 
         return redirect()->back()->with("status", "Your plan has been updated.");
     }
