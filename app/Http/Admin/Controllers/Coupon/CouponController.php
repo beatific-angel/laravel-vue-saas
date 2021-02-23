@@ -54,7 +54,26 @@ class CouponController extends Controller
     public function store(Request $request)
     {
         // $this->authorize('create', Coupon::class);
+
+        $this->validate($request, [
+            'name' => 'required',
+            'percent_off' => 'required',
+            'gateway_id' => 'required',
+            'duration' => 'required',
+        ]);
+
+        // Test if duration_in_months is not empty
+        $duration_in_months = !empty($request->input('duration_in_months')) ? (int) $request->input('duration_in_months') : NULL;
+        $percent_off = (float) $request->input('percent_off');
+        // dd($percent_off);
         
+        \Stripe\Coupon::create([
+            "name" => $request->input('name'),
+            "percent_off" => $percent_off,
+            "duration" => $request->input('duration'),
+            "duration_in_months" => $duration_in_months,
+            "id" => $request->input('gateway_id')
+        ]);
 
         $coupon = new Coupon([
             "name" => $request->input('name'),
@@ -110,8 +129,44 @@ class CouponController extends Controller
 
         // Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
 
-       
-    
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'interval' => 'required',
+        ]);
+
+        $plan = Coupon::findOrFail($id);
+        // Generate pla slug from plan name
+        $slug = str_replace(' ','-', $request->input('name'));
+        $gateway_id = str_replace(' ','_', $request->input('name'));
+        $team_enable = !empty($request->input('teams_limit')) ? 1 : 0;
+        $teams_limit = !empty($request->input('teams_limit')) ? $request->input('teams_limit') : NULL;
+        $price = (float) $request->input('price') * 100;
+        // Delete the plan on stripe 
+        $stripe_plan = \Stripe\Coupon::retrieve($plan->gateway_id);
+        $stripe_plan->delete();
+         // Recrete a new plan on stripe
+        \Stripe\Coupon::create([
+            "amount" => $price,
+            "interval" => $request->input('interval'),
+            "product" => [
+                "name" => $request->input('name'),
+            ],
+            "currency" => "usd",
+            "id" => $gateway_id,
+            "trial_period_days" => $request->input('trial'),
+        ]);
+
+        $plan->name = $request->input('name');
+        $plan->gateway_id = $gateway_id;
+        $plan->price = $request->input('price');
+        $plan->interval = $request->input('interval');
+        $plan->teams_enabled = $team_enable;
+        $plan->teams_limit = $teams_limit;
+        $plan->active =1;
+        $plan->slug = $slug;
+        $plan->trial_period_days = $request->input('trial');
+        $plan->save();
 
         return redirect()->back()->with("status", "Your plan has been updated.");
     }
