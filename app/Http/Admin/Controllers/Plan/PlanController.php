@@ -107,16 +107,7 @@ class PlanController extends Controller
             'interval' => 'required',
         ]);
 
-        $plan = Plan::findOrFail($id);
-        // Generate plan slug from plan name
-        $slug = str_replace(' ','-', $request->input('name'));
-        $gateway_id = str_replace(' ','_', $request->input('name'));
-        $team_enable = !empty($request->input('teams_limit')) ? 1 : 0;
-        $teams_limit = !empty($request->input('teams_limit')) ? $request->input('teams_limit') : NULL;
-        $price = (float) $request->input('price') * 100;
-        // Delete the plan on stripe 
-        $stripe_plan = \Stripe\Plan::retrieve($plan->gateway_id);
-        $stripe_plan->delete();
+        
          // Recrete a new plan on stripe
         \Stripe\Plan::create([
             "amount" => $price,
