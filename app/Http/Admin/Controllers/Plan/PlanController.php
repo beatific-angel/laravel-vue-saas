@@ -142,11 +142,7 @@ class PlanController extends Controller
      */
     public function destroy($id)
     {
-        $this->authorize('delete', Plan::class);
-        $plan = Plan::findOrFail($id);
-
-        $stripe_plan = \Stripe\Plan::retrieve($plan->gateway_id);
-        $stripe_plan->delete();
+        
 
         // Delete the plan on the database
         $plan->delete();
