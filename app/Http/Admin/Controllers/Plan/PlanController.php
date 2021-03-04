@@ -57,6 +57,41 @@ class PlanController extends Controller
 
         // Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
 
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'interval' => 'required',
+        ]);
+            // Generate pla slug from plan name
+        $slug = str_replace(' ','-', $request->input('name'));
+        $gateway_id = str_replace(' ','_', $request->input('name'));
+        $team_enable = !empty($request->input('teams_limit')) ? 1 : 0;
+        $teams_limit = !empty($request->input('teams_limit')) ? $request->input('teams_limit') : NULL;
+        $price = (float) $request->input('price') * 100;
+        
+        \Stripe\Plan::create([
+            "amount" => $price,
+            "interval" => $request->input('interval'),
+            "product" => [
+                "name" => $request->input('name'),
+            ],
+            "currency" => "usd",
+            "id" => $gateway_id,
+            "trial_period_days" => $request->input('trial'),
+        ]);
+
+        $plan = new Plan([
+            'name' => $request->input('name'),
+            'gateway_id' => $gateway_id,
+            'price' => $request->input('price'),
+            'interval' => $request->input('interval'),
+            'teams_enabled' => $team_enable,
+            'teams_limit' => $teams_limit,
+            'active' => 1,
+            'slug' => $slug,
+            'trial_period_days' => $request->input('trial'),
+        ]);
+
         $plan->save();
 
         return redirect()->back()->with("status", "Your plan has been created.");
@@ -107,7 +142,16 @@ class PlanController extends Controller
             'interval' => 'required',
         ]);
 
-        
+        $plan = Plan::findOrFail($id);
+        // Generate plan slug from plan name
+        $slug = str_replace(' ','-', $request->input('name'));
+        $gateway_id = str_replace(' ','_', $request->input('name'));
+        $team_enable = !empty($request->input('teams_limit')) ? 1 : 0;
+        $teams_limit = !empty($request->input('teams_limit')) ? $request->input('teams_limit') : NULL;
+        $price = (float) $request->input('price') * 100;
+        // Delete the plan on stripe 
+        $stripe_plan = \Stripe\Plan::retrieve($plan->gateway_id);
+        $stripe_plan->delete();
          // Recrete a new plan on stripe
         \Stripe\Plan::create([
             "amount" => $price,
@@ -142,7 +186,11 @@ class PlanController extends Controller
      */
     public function destroy($id)
     {
-        
+        $this->authorize('delete', Plan::class);
+        $plan = Plan::findOrFail($id);
+
+        $stripe_plan = \Stripe\Plan::retrieve($plan->gateway_id);
+        $stripe_plan->delete();
 
         // Delete the plan on the database
         $plan->delete();
