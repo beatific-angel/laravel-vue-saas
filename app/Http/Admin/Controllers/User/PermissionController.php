@@ -74,30 +74,4 @@ class PermissionController extends Controller
      * @param  \CreatyDev\Domain\Users\Models\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Permission $permission)
-    {
-        $permission->fill($request->only(['name', 'usable']));
-
-        $permission->save();
-
-        return back()->withSuccess("{$permission->name} permission updated successfully.");
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \CreatyDev\Domain\Users\Models\Permission $permission
-     * @return \Illuminate\Http\Response
-     * @throws \Exception
-     */
-    public function destroy(Permission $permission)
-    {
-        if (!$permission->roles->count()) {
-            $permission->delete();
-
-            return back()->withSuccess("{$permission->name} deleted successfully.");
-        }
-
-        return back()->withError("{$permission->name} cannot be deleted since it has been linked to role(s).");
-    }
 }
