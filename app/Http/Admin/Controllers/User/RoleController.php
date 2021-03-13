@@ -20,16 +20,7 @@ class RoleController extends Controller
     {
         $this->authorize('create', Role::class);
 
-        $roles = Role::with([
-            'children',
-            'ancestors',
-            'users' => function ($query) {
-                return $query->whereNull('expires_at')
-                    ->orWhereDate('expires_at', '>', Carbon::now());
-            },
-            'permissions'
-        ])->filter($request)->paginate();
-
+       
         return view('admin.users.roles.index', compact('roles'));
     }
 
@@ -55,15 +46,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create', Role::class);
-
-        $parent = Role::where('id', $request->parent_id)->first();
-
-        Role::create($request->only(['name', 'details']), $parent);
-
-        return redirect()
-            ->route('admin.roles.index')
-            ->withSuccess("{$request->name} role created successfully.");
+       
     }
 
     /**
