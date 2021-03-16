@@ -81,35 +81,5 @@ class RoleController extends Controller
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function update(Request $request, Role $role)
-    {
-        $this->authorize('update', $role);
-
-        $role->fill($request->only(['name', 'details', 'usable', 'parent_id']));
-
-        $role->save();
-
-        return back()->withSuccess("{$role->name} role updated successfully.");
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \CreatyDev\Domain\Users\Models\Role $role
-     * @return \Illuminate\Http\Response
-     * @throws \Exception
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-     */
-    public function destroy(Role $role)
-    {
-        $this->authorize('delete', $role);
-
-        if (!$role->users->count()) {
-            $role->delete();
-
-            return back()->withSuccess("{$role->name} deleted successfully.");
-        }
-
-        return back()->withError("{$role->name} cannot be deleted since it has been assigned to users.");
-    }
+    
 }
