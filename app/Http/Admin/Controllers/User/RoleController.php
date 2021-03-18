@@ -20,7 +20,16 @@ class RoleController extends Controller
     {
         $this->authorize('create', Role::class);
 
-       
+        $roles = Role::with([
+            'children',
+            'ancestors',
+            'users' => function ($query) {
+                return $query->whereNull('expires_at')
+                    ->orWhereDate('expires_at', '>', Carbon::now());
+            },
+            'permissions'
+        ])->filter($request)->paginate();
+
         return view('admin.users.roles.index', compact('roles'));
     }
 
@@ -46,7 +55,15 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $this->authorize('create', Role::class);
+
+        $parent = Role::where('id', $request->parent_id)->first();
+
+        Role::create($request->only(['name', 'details']), $parent);
+
+        return redirect()
+            ->route('admin.roles.index')
+            ->withSuccess("{$request->name} role created successfully.");
     }
 
     /**
@@ -81,5 +98,35 @@ class RoleController extends Controller
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    
+    public function update(Request $request, Role $role)
+    {
+        $this->authorize('update', $role);
+
+        $role->fill($request->only(['name', 'details', 'usable', 'parent_id']));
+
+        $role->save();
+
+        return back()->withSuccess("{$role->name} role updated successfully.");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \CreatyDev\Domain\Users\Models\Role $role
+     * @return \Illuminate\Http\Response
+     * @throws \Exception
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function destroy(Role $role)
+    {
+        $this->authorize('delete', $role);
+
+        if (!$role->users->count()) {
+            $role->delete();
+
+            return back()->withSuccess("{$role->name} deleted successfully.");
+        }
+
+        return back()->withError("{$role->name} cannot be deleted since it has been assigned to users.");
+    }
 }
