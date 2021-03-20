@@ -20,23 +20,7 @@ class AdminDashboardController extends Controller
     public function index()
 
     {
-        $today_users = User::whereDate('created_at', today())->count();
-        $yesterday_users = User::whereDate('created_at', today()->subDays(1))->count();
-        $users_2_days_ago = User::whereDate('created_at', today()->subDays(2))->count();
-        // Billing
-        $today_billings = DB::table('subscriptions')->whereDate('created_at', today())->count();
-        $yesterday_billings = DB::table('subscriptions')->whereDate('created_at', today()->subDays(1))->count();
-        $billings_2_days_ago = DB::table('subscriptions')->whereDate('created_at', today()->subDays(2))->count();
         
-        // Visitors log graph
-        $today_visitors = DB::table('visitlogs')->whereDate('updated_at', today())->count();
-        $yesterday_visitors = DB::table('visitlogs')->whereDate('updated_at', today()->subDays(1))->count();
-        $visitors_2_days_ago = DB::table('visitlogs')->whereDate('updated_at', today()->subDays(2))->count();
-
-        $chart = new UsersChart;
-        $chart->labels(['2 days ago', 'Yesterday', 'Today']);
-        $chart->dataset('User Registration', 'line', [$users_2_days_ago, $yesterday_users, $today_users]);
-
         $chart->dataset('User Subscription', 'line', [$billings_2_days_ago, $yesterday_billings, $today_billings])->options([
             'color' => '#ff0000',
             'backgroundColor'=> 'rgba(240, 127, 110, 0.3)',
