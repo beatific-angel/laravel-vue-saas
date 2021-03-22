@@ -35,16 +35,7 @@ class AdminDashboardController extends Controller
     }
 
     public function statistics(){
-        // Get all the users
-        $user_count = User::all()->count();
-        $newTicket = Ticket::where('status', 'Open')->count();
-        $unique_visitors = DB::table('visitlogs')->get()->count();
-        $total_subscription = DB::table('subscriptions')->get()->count();
-        return ['users' => $user_count, 
-                'newTicket' => $newTicket, 
-                'unique_visitors' => $unique_visitors,
-                'total_subscription' => $total_subscription
-                ];
+       
 
     }
 
