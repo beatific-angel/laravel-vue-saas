@@ -95,30 +95,3 @@
 </div>
 @endsection
 
-@section('scripts')
-<script>
-new Chart(document.getElementById("chart-bars1"), {
-    type: 'bar',
-    data: {
-      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-      datasets: [
-        {
-          label: "Orders",
-          backgroundColor: "#3e95cd",
-          data: [933,221,983,2478, 2600,2700,2800,2900,1734,1800,1850,1900]
-        }, {
-          label: "Sales",
-          backgroundColor: "#8e5ea2",
-          data: [1608,947,2675,934,2800,850,1900,1600, 2600,2700,2800,2900]
-        }
-      ]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Total Orders and Sales (Month)'
-      }
-    }
-});
-</script>
-@endsection
