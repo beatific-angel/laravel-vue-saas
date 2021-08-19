@@ -1,0 +1,25 @@
+- ## Get Started
+    - [Overview](/{{route}}/{{version}}/overview)
+    - [Installation](/{{route}}/{{version}}/installation)
+    - [Configurations](/{{route}}/{{version}}/configurations)
+    - [Release Notes](/{{route}}/{{version}}/release)
+
+- ## Features
+    - [Authentication](/{{route}}/{{version}}/authentication)
+    - [Account](/{{route}}/{{version}}/account)
+    - [Teams](/{{route}}/{{version}}/team)
+    - [User Impersonations](/{{route}}/{{version}}/impersonations)
+    - [Subscription](/{{route}}/{{version}}/subscription)
+    - [User Roles](/{{route}}/{{version}}/roles)
+    - [Multi-Tenant](/{{route}}/{{version}}/tenant)
+    - [Notifications](/{{route}}/{{version}}/notifications)
+    - [API](/{{route}}/{{version}}/api)
+    - [Charts](/{{route}}/{{version}}/charts)
+    - [Admin Panel](/{{route}}/{{version}}/admin)
+    - [Statistics](/{{route}}/{{version}}/statistics)
+
+- ## Resources
+    - [Support](/{{route}}/{{version}}/support)
+    - [Laravel](https://laravel.com/)
+    - [Vue](https://vuejs.org/)
+    - [Argon Dashboard](https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html)

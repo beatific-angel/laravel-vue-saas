@@ -1,0 +1,1055 @@
+/* ----------------------------------
+
+Name: main.css
+Version: 1.0
+
+-------------------------------------
+
+Table of contents
+        
+    01. Navbar
+    02. Slider
+    03. Features
+    04. Some Facts
+    05. Project
+    06. Video
+    07. Portfolio
+    08. Benifits
+    09. Team
+    10. Get Started
+    11. Testimonials
+    12. Project-2
+    13. Our Price
+    14. Clients
+    15. Contact Us
+    16. Footer
+    17. Page Loading
+    18. Media Query
+*/
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: #f9faff;
+}
+
+/*--------------------------------------------------
+[1. Start Navbar]
+--------------------------------------------------*/
+.navbar {
+    padding: 15px 0;
+    background: #f1f7ff !important;
+}
+.navbar .nav-item {
+    padding: 0;
+    margin: 0;
+}
+.navbar .nav-item .nav-link {
+    padding: 0;
+    margin: 0 0 0 45px;
+    font-size: 15px;
+    color: #575265;
+    font-weight: 600;
+    transition: all 0.4s ease-in-out;
+}
+.navbar .nav-item .nav-link:hover {
+    color: #507bf5;
+}
+.navbar .btn-1 {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    box-shadow: 1px 1px 30px 0 rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0);
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 65px;
+    padding: 10px 45px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 45px;
+    transition: all 0.2s ease-in;
+}
+.navbar .btn-1:hover {
+    background: transparent;
+    border: 1px solid #507bf5;
+    box-shadow: 1px 1px 30px 0 rgba(0,0,0,0);
+    color: #575265;
+
+}
+
+/*--------------------------------------------------
+[2. Start Slider]
+--------------------------------------------------*/
+.slider {
+    background: #f1f7ff;
+    height: 100vh;
+}
+.slider .content {
+    margin-top: 50px;
+}
+.slider .content .left h1 {
+    font-size: 45px;
+    font-weight: 400;
+    color: #1e3056;
+    line-height: 55px;
+    margin: 0;
+    padding: 0;
+}
+.slider .content .left p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #697ba2;
+    line-height: 26px;
+    padding: 0;
+    margin: 10px 0 30px;
+}
+.slider .content .left .btn-1 {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    box-shadow: 1px 1px 30px 0 rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 65px;
+    padding: 10px 45px;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+}
+.slider .content .left .btn-2 {
+    background: transparent;
+    border: 1px solid #1e3056;
+    text-decoration: none;
+    color: #1e3056;
+    border-radius: 65px;
+    padding: 10px 45px;
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/*--------------------------------------------------
+[3. Start Features]
+--------------------------------------------------*/
+.features {
+    background: url("../img/bg/feature-bg.png") top center no-repeat;
+    background-size: cover;
+    padding: 120px 0;
+}
+.features .heading {
+    font-size: 30px;
+    color: #3b566e;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding: 0;
+}
+.features .line {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    height: 2px;
+    width: 50px;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+.features .box {
+    background: #ffffff;
+    box-shadow: 1px 1px 25px 0 rgba(0,0,0,0.05);
+    border-radius: 15px;
+    padding: 60px 30px;
+    transition: all .4s ease-in-out;
+}
+.features .box:hover {
+    transform: translateY(-15px);
+    box-shadow: 1px 1px 25px 0 rgba(0,0,0,0.09);
+}
+.features .box h3 {
+    font-size: 20px;
+    color: #3b566e;
+    font-weight: 600;
+    margin: 25px 0 15px;
+    padding: 0;
+}
+.features .box p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #919aaf;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+}
+
+/*--------------------------------------------------
+[4. Start Some Facts]
+--------------------------------------------------*/
+.some-facts {
+    background: url("../img/bg/some-facts.png") center center no-repeat;
+    background-size: cover;
+    padding: 120px 0;
+}
+.some-facts .items h3 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 800;
+    padding: 0;
+    margin: 20px 0 2px;
+}
+.some-facts .items h4 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+/*--------------------------------------------------
+[5. Start Project]
+--------------------------------------------------*/
+.project {
+    padding: 120px 0;
+}
+.project .right span {
+    font-size: 16px;
+    color: #557ff5;
+    font-weight: 600;
+}
+.project .right h2 {
+    font-size: 25px;
+    color: #3b566e;
+    font-weight: 600;
+    line-height: 32px;
+}
+.project .right p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #919aaf;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+.project .right .btn-1 {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 65px;
+    padding: 10px 45px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/*--------------------------------------------------
+[6. Start Video]
+--------------------------------------------------*/
+.video {
+    background: url("../img/bg/video-bg.png") center center no-repeat;
+    background-size: cover;
+    padding: 120px 0;
+}
+.video-icon .icon {
+    background: #ffffff;
+    color: #507bf5;
+    display: inline;
+    font-size: 20px;
+    padding: 22px 28px;
+    border-radius: 200px;
+    position: relative;
+}
+
+/* Pulse Animation */
+.pulse {
+    animation: pulse 1s infinite;
+    animation-duration: 2s;
+}
+
+/* Keyframes */
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 50px rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 50px rgba(255, 255, 255, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+/*--------------------------------------------------
+[7. Start Portfolio]
+--------------------------------------------------*/
+.portfolio .single-portfolio-item {
+    position: relative;
+    padding: 0;
+}
+
+.portfolio .single-portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    color: #333333;
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+}
+
+.portfolio .single-portfolio-item .overlay .content {
+    font-size: 20px;
+    position: absolute;
+    text-decoration: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #ffffff;
+    transition: all 0.2s ease-in;
+
+}
+
+.portfolio .single-portfolio-item .overlay .content h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #444444;
+    padding: 0;
+    margin: 0;
+}
+
+.portfolio .single-portfolio-item .overlay .content p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #507bf5;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.portfolio .single-portfolio-item .overlay .content a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.portfolio .single-portfolio-item:hover .overlay {
+    opacity: 0.95;
+}
+
+/*--------------------------------------------------
+[8. Start Benefits]
+--------------------------------------------------*/
+.benefits {
+    padding: 120px 0;
+    background: #f1f7ff;
+}
+.benefits .heading {
+    font-size: 30px;
+    color: #3b566e;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding: 0;
+}
+.benefits .line {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    height: 2px;
+    width: 50px;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+.benefits .box {
+    padding: 0 30px;
+}
+.benefits .box h3 {
+    font-size: 20px;
+    color: #3b566e;
+    font-weight: 600;
+    margin: 20px 0 10px;
+    padding: 0;
+}
+.benefits .box p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #919aaf;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+}
+.benefits .mb-30 {
+    margin-bottom: 40px;
+}
+
+/*--------------------------------------------------
+[9. Start Team]
+--------------------------------------------------*/
+.our-team {
+    padding: 120px 0;
+}
+.our-team .heading {
+    font-size: 30px;
+    color: #3b566e;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding: 0;
+}
+.our-team .line {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    height: 2px;
+    width: 50px;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+.our-team .box {
+    box-shadow: 1px 1px 25px 0 rgba(0,0,0,0.05);
+    background: #ffffff;
+    border-radius: 5px;
+}
+.our-team .box .image {
+    position: relative;
+}
+.our-team .box .image img {
+    width: 100%;
+}
+.our-team .box .image .social-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    box-shadow: 1px 1px 30px 0 rgba(0,0,0,0.2);
+    padding: 13px 20px 10px;
+    border-radius: 35px;
+    margin-top: 100px;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+.our-team .box .image .social-icon i {
+    font-size: 20px;
+    text-transform: none;
+    color: #ffffff;
+    padding: 0 10px;
+}
+.our-team .box:hover .social-icon {
+    opacity: 1;
+    margin-top: 0;
+}
+.our-team .info {
+    padding: 30px 0;
+}
+.our-team .info h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #3b566e;
+}
+.our-team .info span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8c9399;
+}
+
+/*--------------------------------------------------
+[10. Start Get Started]
+--------------------------------------------------*/
+.get-started {
+    background: url("../img/bg/get-started.png") center center no-repeat;
+    background-size: cover;
+    padding: 120px 0;
+    color: #ffffff;
+}
+.get-started span {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.get-started h3 {
+    font-size: 25px;
+    font-weight: 400;
+    margin: 10px 0 0;
+}
+.get-started .btn-1 {
+    background: #ffffff;
+    box-shadow: 1px 1px 30px 0 rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: #1e3056;
+    border-radius: 65px;
+    padding: 10px 45px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 25px;
+    display: inline-block;
+}
+
+/*--------------------------------------------------
+[11. Start Testimonials]
+--------------------------------------------------*/
+.testimonials {
+    padding: 120px 0;
+}
+.testimonials .heading {
+    font-size: 30px;
+    color: #3b566e;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding: 0;
+}
+.testimonials .line {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    height: 2px;
+    width: 50px;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+.testimonials .box {
+    background: #ffffff;
+    border-radius: 8px;
+    background: linear-gradient(to left, rgba(4,195,225,1) 0%, rgba(4,195,225,1) 12%, rgba(4,195,225,1) 47%, rgb(80, 123, 245) 100%) left bottom #fff no-repeat;
+    background-size: 100% 5px;
+    box-shadow: 1px 1px 25px 0 rgba(0,0,0,0.05);
+    position: relative;
+    margin: 48px 15px 0;
+    padding: 90px 30px 50px;
+}
+.testimonials .box img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -47px;
+}
+.testimonials .box h3 {
+    font-size: 20px;
+    color: #3b566e;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+.testimonials .box span {
+    font-size: 14px;
+    color: #8c9399;
+    font-weight: 400;
+}
+.testimonials .box p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #919aaf;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+}
+.slick-list {
+    outline: none !important;
+}
+.slick-slide:focus {
+    outline: none;
+}
+.slick-dots li button:before {
+    font-family: 'slick';
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: none;
+    border-radius: 100%;
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    text-indent: -9999px;
+    margin-top: 40px;
+}
+
+/*--------------------------------------------------
+[12. Start Project-2]
+--------------------------------------------------*/
+.project-2 {
+    padding: 80px 0 120;
+}
+.project-2 .left span {
+    font-size: 16px;
+    color: #557ff5;
+    font-weight: 600;
+}
+.project-2 .left h2 {
+    font-size: 25px;
+    color: #3b566e;
+    font-weight: 600;
+    line-height: 32px;
+}
+.project-2 .left p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #919aaf;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+.project-2 .left .btn-1 {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 65px;
+    padding: 10px 45px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/*--------------------------------------------------
+[13. Start Our Price]
+--------------------------------------------------*/
+.our-price {
+    padding: 120px 0;
+}
+.our-price .heading {
+    font-size: 30px;
+    color: #3b566e;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding: 0;
+}
+.our-price .line {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    height: 2px;
+    width: 50px;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+.our-price .box {
+    background: #ffffff;
+    border-radius: 7px;
+    box-shadow: 1px 1px 25px 0 rgba(0,0,0,0.05);
+    padding: 50px 0;
+    position: relative;
+    transition: all .5s ease-in-out;
+}
+.our-price .box:hover {
+    transform: translateY(-15px);
+    box-shadow: 1px 1px 25px 0 rgba(0,0,0,0.09);
+}
+.our-price .box-center {
+    box-shadow: 2px 2px 35px 0 rgba(0,0,0,0.1);
+}
+.our-price .box h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4b6fd2;
+    text-transform: uppercase;
+}
+.our-price .box h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #a8acaf;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.our-price .box h4 span {
+    font-size: 50px;
+    font-weight: 700;
+    color: #3b566e;
+}
+.our-price .box span.blue {
+    color: #4b6fd2;
+}
+.our-price .box ul {
+    margin: 0;
+    padding: 0;
+}
+.our-price .box ul li {
+    list-style: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #5b7388;
+    border-bottom: 1px solid #f6f6f7;
+    padding: 20px 0;
+}
+.our-price .box .btn-2 {
+    background: transparent;
+    border: 1px solid #1e3056;
+    text-decoration: none;
+    color: #1e3056;
+    border-radius: 65px;
+    padding: 10px 45px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 40px;
+    display: inline-block;
+}
+
+.our-price .box .top-btn {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    box-shadow: 1px 1px 30px 0 rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 65px;
+    padding: 10px 0;
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -17px;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.our-price .box .btn-1 {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    box-shadow: 1px 1px 30px 0 rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 65px;
+    padding: 10px 45px;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 42px;
+}
+
+/*--------------------------------------------------
+[14. Start Clients]
+--------------------------------------------------*/
+.clients {
+    padding: 120px 0;
+    background: url("../img/bg/clients.png") center center no-repeat;
+    background-size: cover;
+}
+
+.clients .item {
+    margin: 0 20px;
+}
+
+/*--------------------------------------------------
+[15. Start Contact Us]
+--------------------------------------------------*/
+.contact {
+    padding: 120px 0;
+}
+
+.contact .heading h2 {
+    font-size: 30px;
+    color: #3b566e;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding: 0;
+}
+.contact .line {
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    height: 2px;
+    width: 50px;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+
+.contact .form-control {
+    padding: 25px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    background: #f1f1f5;
+    border: 0;
+    border-radius: 10px;
+}
+
+.contact button.btn {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    background: linear-gradient(to right, #507bf5 0%,#04c3e1 100%);
+    color: #ffffff;
+}
+
+.contact .title h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact .title p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+    line-height: 1.6;
+    margin: 0 0 40px;
+}
+
+.contact .content .info {
+    margin-top: 30px;
+}
+
+.contact .content .info i {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    color: #02434b;
+    margin-right: 20px;
+}
+
+.contact .content .info h4 {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.contact .content .info h4 span {
+    font-size: 13px;
+    font-weight: 300;
+    color: #999999;
+}
+
+/*--------------------------------------------------
+[16. Start Footer]
+--------------------------------------------------*/
+.footer {
+    padding: 60px 0;
+    background: #2e3444;
+}
+.footer p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 20px 0 0;
+}
+
+/*--------------------------------------------------
+[17. Start Page Loading]
+--------------------------------------------------*/
+.no-js #loader {
+    display: none;
+}
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+.se-pre-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url("../img/loader/Preloader_2.gif") center no-repeat #fff;
+}
+
+/*--------------------------------------------------
+[18. Start Media Query]
+--------------------------------------------------*/
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 383.98px) {
+    .slider .content .left .btn-1 {
+        margin-bottom: 20px;
+    }
+    .slider .content .left .btn-2 {
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 575.98px) {
+    /* Navbar */
+    .navbar {
+        padding: 15px 20px;
+    }
+    .navbar .nav-item .nav-link {
+        margin: 20px 0 10px;
+    }
+    .navbar .btn-1 {
+        margin: 20px 0;
+        display: inline-block;
+    }
+
+    /* Slider */
+    .slider {
+        height: auto;
+        padding: 120px 0;
+    }
+    .slider .content {
+        text-align: center;
+    }
+    .slider .content .left {
+        margin-bottom: 40px;
+    }
+
+    /* Features */
+    .features {
+        padding: 120px 0 90px;
+    }
+    .features .box {
+        margin-bottom: 30px;
+    }
+
+    /* Some Facts */
+    .some-facts {
+        padding: 80px 0 30px;
+    }
+    .some-facts .items {
+        margin-bottom: 50px;
+    }
+
+    /* Some Project */
+    .project .right {
+        margin-top: 40px;
+    }
+
+    /* Some Benefits */
+    .benefits {
+        padding: 120px 0 80px;
+    }
+    .benefits .box {
+        margin-bottom: 40px;
+    }
+
+    /* Our Team */
+    .our-team {
+        padding: 120px 0 90px;
+    }
+    .our-team .box {
+        margin-bottom: 30px;
+    }
+
+    /* Some Project-2 */
+    .project-2 .left {
+        margin-bottom: 40px;
+    }
+
+    /* Some Our Price */
+    .our-price {
+        padding: 120px 0 90px;
+    }
+    .our-price .box {
+        margin-bottom: 30px;
+    }
+
+    /* Some Contact Us */
+    .contact .content {
+        margin-bottom: 40px;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    /* Navbar */
+    .navbar {
+        padding: 15px 20px;
+    }
+    .navbar .nav-item .nav-link {
+        margin: 20px 0 10px;
+    }
+    .navbar .btn-1 {
+        margin: 20px 0;
+        display: inline-block;
+    }
+
+    /* Slider */
+    .slider {
+        height: auto;
+        padding: 120px 0;
+    }
+    .slider .content {
+        text-align: center;
+    }
+    .slider .content .left {
+        margin-bottom: 40px;
+    }
+
+    /* Features */
+    .features {
+        padding: 120px 0 90px;
+    }
+    .features .box {
+        margin-bottom: 30px;
+    }
+
+    /* Some Facts */
+    .some-facts {
+        padding: 80px 0 30px;
+    }
+    .some-facts .items {
+        margin-bottom: 50px;
+    }
+
+    /* Some Project */
+    .project .right {
+        margin-top: 40px;
+    }
+
+    /* Some Benefits */
+    .benefits {
+        padding: 120px 0 80px;
+    }
+    .benefits .box {
+        margin-bottom: 40px;
+    }
+
+    /* Our Team */
+    .our-team {
+        padding: 120px 0 90px;
+    }
+    .our-team .box {
+        margin-bottom: 30px;
+    }
+    /* Team */
+    .our-team .box .image .social-icon {
+        width: 40%;
+    }
+
+    /* Some Project-2 */
+    .project-2 .left {
+        margin-bottom: 40px;
+    }
+
+    /* Some Our Price */
+    .our-price {
+        padding: 120px 0 90px;
+    }
+    .our-price .box {
+        margin-bottom: 30px;
+    }
+
+    /* Some Contact Us */
+    .contact .content {
+        margin-bottom: 40px;
+    }
+
+}
+
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    /* Navbar */
+    .navbar {
+        padding: 15px 20px;
+    }
+    .navbar .nav-item .nav-link {
+        margin: 20px 0 10px;
+    }
+    .navbar .btn-1 {
+        margin: 20px 0;
+        display: inline-block;
+    }
+    /* Slider */
+    .slider {
+        height: auto;
+        padding: 120px 0;
+    }
+    .slider .content .left h1 {
+        font-size: 35px;
+    }
+    .slider .content .left p {
+        font-size: 15px;
+    }
+
+    /* Some Facts */
+    .some-facts {
+        padding: 80px 0 30px;
+    }
+    .some-facts .items {
+        margin-bottom: 50px;
+    }
+
+    /* Team */
+    .our-team .box .image .social-icon {
+        width: 70%;
+    }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+}

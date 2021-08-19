@@ -1,0 +1,34 @@
+// Here you can add other styles
+
+.sortable {
+  cursor: pointer;
+}
+
+.arrow {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  margin-left: 0.2rem;
+  opacity: .6;
+
+  &--asc {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid #222;
+  }
+
+  &--desc {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #222;
+  }
+}
+.bg-gradient-primary {
+    background: linear-gradient(87deg,#5e72e4 0,#825ee4 100%)!important;
+	border-radius: .375rem;
+}
+.bg-gradient-default {
+    background: linear-gradient(87deg,#172b4d 0,#1a174d 100%)!important;
+	border-radius: .375rem;
+}

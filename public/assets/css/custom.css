@@ -1,0 +1,7 @@
+.badge-circle.badge-md {
+        width: 1rem;
+        height: 1rem;
+        position: relative;
+        top: -12px;
+        left: -12px;
+    }
