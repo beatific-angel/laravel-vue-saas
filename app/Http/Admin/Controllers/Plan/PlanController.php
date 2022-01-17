@@ -39,8 +39,7 @@ class PlanController extends Controller
      */
     public function create()
     {
-        $this->authorize('create', Plan::class);
-
+       $this->authorize('create', Plan::class);
         return view('admin.plans.create');
         
     }
@@ -143,7 +142,6 @@ class PlanController extends Controller
         ]);
 
         $plan = Plan::findOrFail($id);
-        // Generate plan slug from plan name
         $slug = str_replace(' ','-', $request->input('name'));
         $gateway_id = str_replace(' ','_', $request->input('name'));
         $team_enable = !empty($request->input('teams_limit')) ? 1 : 0;
